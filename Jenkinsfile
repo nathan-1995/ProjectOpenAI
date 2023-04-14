@@ -14,7 +14,8 @@ pipeline {
        stage('Build') {
            steps {
                echo 'Building..'
-               sh 'docker image build -t $DOCKER_HUB_REPO:latest .'
+               sh "docker image build --build-arg OPENAI_API_KEY=${OPENAI_API_KEY} -t $DOCKER_HUB_REPO:latest ."
+
            }
        }
        stage('Test') {
