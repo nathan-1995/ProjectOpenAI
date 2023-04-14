@@ -4,6 +4,7 @@ pipeline {
    environment {
        DOCKER_HUB_REPO = "nathan14224/my-flask-app"
        CONTAINER_NAME = "my-flask-app"
+       OPENAI_API_KEY = credentials('openai-api-key')
  
    }
   
