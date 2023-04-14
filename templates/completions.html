@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>OpenAI Completions Example</title>
+</head>
+
+<body>
+    <h1>OpenAI Completions Example</h1>
+    <form method="post">
+        <label for="prompt">Prompt:</label>
+        <input type="text" name="prompt" id="prompt">
+        <br>
+        <label for="max_tokens">Max Tokens:</label>
+        <input type="number" name="max_tokens" id="max_tokens" value="7">
+        <br>
+        <label for="temperature">Temperature:</label>
+        <input type="number" name="temperature" id="temperature" step="0.01" value="0">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if text %}
+    <h2>Result:</h2>
+    <p>{{ text }}</p>
+    {% endif %}
+</body>
+
+</html>

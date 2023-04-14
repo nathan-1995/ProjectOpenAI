@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OpenAI Example</title>
+</head>
+
+<body>
+    <h1>OpenAI Example</h1>
+    <form method="POST" action="/edit">
+        <label for="input_text">Input Text:</label><br>
+        <textarea name="input_text" id="input_text" cols="30" rows="10"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if corrected_text %}
+    <h2>Corrected Text:</h2>
+    <p>{{ corrected_text }}</p>
+    {% endif %}
+</body>
+
+</html>

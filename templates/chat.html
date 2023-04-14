@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OpenAI Chatbot Example</title>
+</head>
+
+<body>
+    <h1>OpenAI Chatbot Example</h1>
+    <form action="/" method="POST">
+        <input type="text" name="message" />
+        <button type="submit">Send</button>
+    </form>
+    <div>
+        <h2>OpenAI Response:</h2>
+        <div id="response"></div>
+    </div>
+    <script>
+        const form = document.querySelector('form');
+        const responseDiv = document.querySelector('#response');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            const response = await fetch('/chat', {
+                method: 'POST',
+                body: formData
+            });
+            const text = await response.text();
+            responseDiv.innerHTML = text;
+        });
+    </script>
+</body>
+
+</html>
